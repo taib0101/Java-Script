@@ -24,6 +24,8 @@ console.log(obj["Name"][1])
 console.log(obj["Name"].find((value) => value === "Tai"));// output : undefined
 console.log("found the value is : " + obj["Name"].findIndex((value) => value === "Taib"));
 console.log("found the value is : " + obj["Name"].find((value) => value === "Taib"));
+
+
 //converting this object to array
 let arr = Object.keys(obj);//it take the keys of object and keep those in array's index
 console.log("Length of object keys : %d",arr.length);
