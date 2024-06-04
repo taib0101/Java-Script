@@ -68,7 +68,7 @@ console.log(text);
 text = text.replace(/is/g,"was"); //it replace all word of string
 console.log(text);
 
-//split()
+//split() ,during spilt need to add join(" ") else it will show error
 text = "Taib,is,a,string"
 text = text.split(",").join(" ");
 console.log(text);
