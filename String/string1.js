@@ -1,6 +1,6 @@
 // let str1 = "madamimadam";
-let str1 = new String("madamimadam");
-let str2 = " is a string";
+let str1 = new String("madamimadam");//instanceof String
+let str2 = " is a string";//typeof string
 
 //length
 let size1 = str1.length;
@@ -70,7 +70,7 @@ console.log(text);
 
 //split() ,during spilt need to add join(" ") for making string ,because join for typeof string 
 //spilt for array
-text = "Taib,is,a,string"
+text = "Taib,is,a,string" //this string is typeof string
 text = text.split(",").join(" ");
 console.log(text);
 
