@@ -70,6 +70,7 @@ console.log(text);
 
 //split() ,during spilt need to add join(" ") for making string ,because join for typeof string 
 //spilt makes string to array
+//spilt only works for string
 text = "Taib,is,a,string" //this string is typeof string
 text = text.split(",").join(" ");
 console.log(text);
