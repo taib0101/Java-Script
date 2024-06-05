@@ -69,7 +69,7 @@ text = text.replace(/is/g,"was"); //it replace all word of string
 console.log(text);
 
 //split() ,during spilt need to add join(" ") for making string ,because join for typeof string 
-//spilt for array
+//spilt makes string to array
 text = "Taib,is,a,string" //this string is typeof string
 text = text.split(",").join(" ");
 console.log(text);
