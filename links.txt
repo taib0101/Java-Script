@@ -1,0 +1,5 @@
+Prototypes link:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+w3school:
+https://www.w3schools.com/js/default.asp
