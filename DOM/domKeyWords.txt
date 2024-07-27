@@ -1,0 +1,84 @@
+keywords:document,
+querySelector("#id | .class | tagname | [attribute="value"] | .class:not(#id) | li:[first-child|second-child] | .class div | .class>div"),
+
+querySelectorAll("#id , .class , tagname , [attribute="value"] , .class:not(#id) , li:[first-child|second-child] , .class div , .class>div"),
+
+getElementById("id"),getELementsByClassName("class"),getElementsByTagName("div"),
+
+createElement("div|p"),
+
+parent = document.getElementById("id");
+
+parent.style.border = "solid 2px",
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+parent.setAttribute("attributes","value"),parent.removeAttribute("attributes"),
+
+parent.classList.add("class"),classList.remove("class"), parent.className += " class1", parent.className = parent.className.replace("class1",""),
+
+parent.appendChild(child), parent.insertBefore(child_box2,child_box1), 
+
+parent.insertAdjacentElement|HTML|Text("beforeBegin|afterBegin|beforeEnd|afterEnd",child)
+
+child.previousElementSibling.remove();
+
+child.remove()
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+const document = {
+	createElement("") : {style:{border,etc},setAttribute("",""),removeAttribute(""),classList:{add(""), remove("")},className:{replace(" ","")},
+                            insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            previousElementSibling:{remove()},remove();
+                        },
+
+ 
+	querySelector("") : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
+                            insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            previousElementSibling:{remove()},remove();
+                        },
+
+	getElementById("") : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
+			    insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+			    insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+			    previousElementSibling:{remove()},remove();
+			},
+
+	html               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
+                            insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            previousElementSibling:{remove()},remove();
+                        },
+	
+	head               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
+                            insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            previousElementSibling:{remove()},remove();
+                        },
+	
+
+        body               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
+                            insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            previousElementSibling:{remove()},remove();
+                        }
+
+}
+
+
+
+const parent = document.createElement("div");
+parent.setAtrribute("id","parent1");
+console.log(parent.childNodes[0].childNodes[0]);
+console.log(parent.parentNode.parentNode);
+
+
+
+
+
+-----------------------------------------------------------------
+document -> getElementById,getElementsByClassName,getElementsByTagName,querySelector,querySelectorAll,createElement
+node -> addEventListener,setAtrribute,className,classList,appendChild,insertBefore,removeChild,remove,childNodes,parentNode,hasChildNodes,
+	insertAdjacentElement,etc many more

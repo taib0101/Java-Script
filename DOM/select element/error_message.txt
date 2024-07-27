@@ -1,0 +1,12 @@
+dont declare const data type in others js file which are connected one html file
+example:
+
+in index.html file
+<script src="getElementById.js"></script> 1
+<script src="getElementsByClassName.js"></script> 2
+<script src="getElementsByTagName.js"></script>
+
+1.const querySelector = docuement.querySelector("#child1")
+2.querySelector = docuement.querySelector(".box") or const querySelector = docuement.querySelector("div")
+
+those will show bug in browser console
