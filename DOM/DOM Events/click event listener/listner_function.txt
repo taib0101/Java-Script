@@ -1,0 +1,17 @@
+// method 1
+const call = (event) => {
+    console.log(event);
+};
+document.querySelector(".col").addEventListener("click" , call);
+
+
+// method 2
+document.querySelector(".col").addEventListener("click" , (event) => {
+    console.log(event);
+});
+
+// when we use method 1 ?
+// we use method 1 when we have removeEventListener
+document.querySelector(".col").removeEventListener("click" , call);
+
+// if we dont use method 1 beside method 2 , it will act like multiple events 

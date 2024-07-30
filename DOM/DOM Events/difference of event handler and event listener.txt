@@ -1,0 +1,4 @@
+event handler: This is the older way of handling events and is typically set 
+               using the on prefix followed by the event
+event listener: it support Multiple Handlers, Event Phases(bubble,capture), 
+                Removal of Event Listeners

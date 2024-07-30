@@ -1,0 +1,8 @@
+                    window
+                    |    |
+              document  screen
+              |     |
+             head  body
+                   |  |
+                 div  p and etc elements or tags
+        
