@@ -21,6 +21,8 @@ parent.appendChild(child), parent.insertBefore(child_box2,child_box1),
 
 parent.insertAdjacentElement|HTML|Text("beforeBegin|afterBegin|beforeEnd|afterEnd",child)
 
+parent.matches("div|#id|.row")
+
 child.previousElementSibling.remove();
 
 child.remove()
@@ -29,39 +31,39 @@ child.remove()
 const document = {
 	createElement("") : {style:{border,etc},setAttribute("",""),removeAttribute(""),classList:{add(""), remove("")},className:{replace(" ","")},
                             insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
                             previousElementSibling:{remove()},remove();
                         },
 
  
 	querySelector("") : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
                             insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
                             previousElementSibling:{remove()},remove();
                         },
 
 	getElementById("") : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
 			    insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-			    insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+			    insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
 			    previousElementSibling:{remove()},remove();
 			},
 
 	html               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
                             insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
                             previousElementSibling:{remove()},remove();
                         },
 	
 	head               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
                             insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
                             previousElementSibling:{remove()},remove();
                         },
 	
 
         body               : {style,setAttribute("",""),removeAttribute(""),classList : {add(""), remove("")},className:{replace(" ","")},
                             insertAdjacentElement|HTML|Text("",),textContent(""),innerText(""),innerHTML(""),appendChild(),
-                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,
+                            insertBefore(,) ,parentNode,parentElement,firstChild,lastChild,children,childNodes,attributes,nodeName,nodeValue,matches
                             previousElementSibling:{remove()},remove();
                         }
 
