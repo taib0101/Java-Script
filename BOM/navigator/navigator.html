@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    <p id="seven"></p>
+    <p id="eight"></p>
+    <p id="nine"></p>
+    <p id="ten"></p>
+</body>
+<script>
+    const one = document.querySelector("#one");
+    one.innerText = `appName : ${window.navigator.appName}`;
+
+    const two = document.querySelector("#two");
+    two.innerText = `appCodeName : ${navigator.appCodeName}`;
+
+    const three = document.querySelector("#three");
+    three.innerText = `platform : ${navigator.platform}`;
+
+    const four = document.querySelector("#four");
+    four.innerText = `cookieEnabled : ${navigator.cookieEnabled}`;
+
+    const five = document.querySelector("#five");
+    five.innerText = `product : ${navigator.product}`;
+
+    const six = document.querySelector("#six");
+    six.innerText = `appVersion : ${navigator.appVersion}`;
+
+    const seven = document.querySelector("#seven");
+    seven.innerText = `userAgent : ${navigator.userAgent}`;
+
+    const eight = document.querySelector("#eight");
+    eight.innerText = `language : ${navigator.language}`;
+
+    const nine = document.querySelector("#nine");
+    nine.innerText = `onLine : ${navigator.onLine}`;
+
+    const ten = document.querySelector("#ten");
+    ten.innerText = `javaEnabled : ${navigator.javaEnabled()}`;
+
+</script>
+</html>

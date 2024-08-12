@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #alert,#confirm,#prompt {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="alert">click alert</button>
+    <button id="confirm">click confirm</button>
+    <button id="prompt">click prompt</button>
+    <p></p>
+</body>
+<script>
+    const alert = document.querySelector("#alert");
+    alert.addEventListener("click" , (event) => {
+        window.alert("alert\nclicked")
+    });
+
+    const confirm = document.querySelector("#confirm");
+    let txt;
+    confirm.addEventListener("click" , (event) => {
+        if(window.confirm("Press a Button!")) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancle!"
+        }
+        document.querySelector("p").innerText = txt;
+    });
+
+    const prompt = document.querySelector("#prompt");
+    prompt.addEventListener("click" , (event) => {
+        let person = window.prompt("Write your Name","Default");
+        if(person == "") {
+            txt = "This is Null";
+        } else {
+            txt = "Hi " + person + " , How are you?";
+        }
+        document.querySelector("p").innerText = txt;
+    });
+</script>
+</html>

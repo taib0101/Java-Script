@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(https://i.sstatic.net/ftJXC.png) fixed center no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.addEventListener("resize" , (event) => {
+        console.clear();
+        console.log(`window.screenX = ${window.screenX}`);
+        console.log(`screenY = ${screenY}`);
+        document.body.innerText = `distance of browser window to monitor screen,\nwindow.screenX = ${window.screenX},screenY = ${screenY}`;
+    });
+</script>
+
+</html>

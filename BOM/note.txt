@@ -1,0 +1,7 @@
+1. we can use resize and scroll event listener in window and element both
+
+2.screenLeft == screenX, screenTop == screenY ,but screenX and screenY uses is better practice
+
+3.pageXOffset == scrollX , pageYOffset == scrollY,but scrollX and scrollY uses is better practice
+
+4.scrollBy and scrollTo can use also in DOM property for elements

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="one">
+        see the available width and available height by "window.screen.availableWidth" and "screen.availableHeight" . available width or height means skipping taskbar from total screen width height
+    </p>
+    
+    <p class="two" style="background-color: aqua;"></p>
+</body>
+<script>
+    const two = window.document.querySelector(".two");
+    two.innerText = `total available width = ${window.screen.availWidth},\ntotal available height = ${screen.availHeight}`
+</script>
+</html>

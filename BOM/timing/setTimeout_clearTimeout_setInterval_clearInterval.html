@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="one">setTimeout method execute once after specific delay,but setInterval execute continously following the specific delay(milisecond)</p>
+    <button id="setTime">let variable = window.setTimeout(function,delay)</button>
+    <button id="clearTime">window.clearTimeout(variable)</button>
+    <button id="setInterval">let variable = window.setInterval(function,delay)</button>
+    <button id="clearInterval">window.clearInterval(variable)</button>
+    <p id="two"></p>
+</body>
+<script>
+    let p_tag = document.querySelector("#two");
+    let setFunction;
+    
+    const setTime = document.querySelector("#setTime");
+    setTime.addEventListener("click", (event) => {
+        setFunction = setTimeout(() => {
+            p_tag.innerText = "It executed after 4s";
+        }, 4000);
+    });
+
+    const clearTime = document.querySelector("#clearTime");
+    clearTime.addEventListener("click" , (event) => {
+        window.clearTimeout(setFunction);
+    });
+
+    const setInter = document.querySelector("#setInterval");
+    setInter.addEventListener("click" , (event) => {
+        setFunction = window.setInterval(() => {
+            let date = new Date().toLocaleTimeString();
+            p_tag.innerText = date;
+        } , 1000);
+    });
+
+    const clearInter = document.querySelector("#clearInterval");
+    clearInter.addEventListener("click" , (event) => {
+        window.clearInterval(setFunction);
+    });
+
+</script>
+
+</html>

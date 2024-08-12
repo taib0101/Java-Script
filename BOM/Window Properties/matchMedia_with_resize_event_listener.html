@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="height: 100dvh;">
+
+</body>
+<script>
+    console.log(`total window side , outerWidth = ${outerWidth} , outerHeight = ${outerHeight}`);
+    window.document.body.innerText = `total window side , outerWidth = ${outerWidth} , outerHeight = ${outerHeight}`;
+    
+    window.addEventListener("resize", (event) => {
+        if(window.matchMedia("(max-width: 500px)").matches) {
+            console.log(`window.innerWidth is ${window.innerWidth} less then or equal 500px`);
+            window.document.body.innerText = `window.innerWidth is ${window.innerWidth} less then or equal 500px`;
+
+        } else {
+            console.log(`window.innerWidth is ${innerWidth} greater then 500px`);
+            window.document.body.innerText = `window.innerWidth is ${innerWidth} greater then 500px`;
+            
+        }
+    });
+</script>
+
+</html>

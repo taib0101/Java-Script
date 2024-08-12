@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 300dvh; width: 300dvh; background-color: blueviolet;">
+    <p>scrollTo(x,y) scrolls the element or window to a specific absolute position.</p>
+    <p>it starts from x,y as 0,0</p>
+    <button id="click" style="position: fixed;">
+        click scrollTo(x,y)
+    </button>
+
+</body>
+<script>
+    const click = window.document.querySelector("#click");
+    console.log(click);
+    click.addEventListener("click" , (event) => {
+        window.scrollTo(0,100);
+    });
+
+</script>
+</html>

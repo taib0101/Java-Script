@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 300dvh; width: 300dvh; background-color: blueviolet;">
+    <button id="down" style="position: fixed; z-index: 100;">
+        click-down scrollBy(x,+y)
+    </button>
+    
+    <button id="up" style="position: fixed; top: 10px; left: 500px;">
+        click-up scrollBy(x,-y)
+    </button>
+    
+    <button id="right" style="position: fixed; top: 50px; left: 10;">
+        click-right scrollBy(+x,y)
+    </button>
+    
+    <button id="left" style="position: fixed; top: 50px; left: 500px;">
+        click-left scrollBy(-x,y)
+    </button>
+    <p style="position: relative; top:100px;left: 10px; z-index: -1;">show output scrollX and scrollY</p>
+</body>
+<script>
+    let output = () => {
+        console.clear();
+        console.log(`window.scrollX = ${window.scrollX}`);
+        console.log(`scrollY = ${scrollY}`);
+    };
+
+    const down = window.document.querySelector("#down");
+    down.addEventListener("click" , (event) => {
+        window.scrollBy(0,10);
+        output();
+    });
+
+    const up = window.document.querySelector("#up");
+    up.addEventListener("click" , (event) => {
+        window.scrollBy(0,-10);
+        output();
+    });
+
+    const right = window.document.querySelector("#right");
+    right.addEventListener("click" , (event) => {
+        window.scrollBy(10,0);
+        output();
+    });
+
+    const left = window.document.querySelector("#left");
+    left.addEventListener("click" , (event) => {
+        window.scrollBy(-10,0);
+        output();
+    });
+</script>
+</html>
