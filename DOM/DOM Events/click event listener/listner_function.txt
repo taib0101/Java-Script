@@ -1,17 +1,18 @@
 // method 1
-const call = (event) => {
+const functionn = (event) => {
     console.log(event);
 };
-document.querySelector(".col").addEventListener("click" , call);
+document.querySelector(".col").addEventListener("click" , callback_function);
 
 
 // method 2
+// with anonymous function
 document.querySelector(".col").addEventListener("click" , (event) => {
     console.log(event);
 });
 
 // when we use method 1 ?
-// we use method 1 when we have removeEventListener
-document.querySelector(".col").removeEventListener("click" , call);
+// we use method 1 when we use removeEventListener
+document.querySelector(".col").removeEventListener("click" , callback_function);
 
 // if we dont use method 1 beside method 2 , it will act like multiple events 
