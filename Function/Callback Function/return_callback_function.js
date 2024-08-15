@@ -10,6 +10,8 @@ let filterr = (array,callback) => {
     return new_array;
 };
 
+arr = filterr(arr, (x) => x >= 0);
+
 arr = filterr(arr, (x) => {
     return x >= 0;
 });
