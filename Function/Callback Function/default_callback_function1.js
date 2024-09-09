@@ -1,10 +1,5 @@
 // callback function means , making function as argument for specific function
 // method 1:
-
-let display = (sum) => {
-    console.log("sum is : ",sum);
-}
-
 let calculator = (number1,number2,callback) => {
     let result = number1 + number2;
     if(callback === display) {
@@ -15,6 +10,10 @@ let calculator = (number1,number2,callback) => {
         display(result);
     }
 };
+
+let display = (sum) => {
+    console.log("sum is : ",sum);
+}
 
 //passing function as argument
 calculator(2,3,display);
