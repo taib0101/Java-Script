@@ -13,7 +13,9 @@
         <p>3. Getting path and file name of current page by location.pathname</p>
         <p>4. Getting web protocol by window.location.protocol</p>
         <p>5. Getting port by window.location.port</p>
-        <p>6 . Load a new document by window.location.assign("https://www.youtube.com/watch?v=FRg3vcyNpjk")</p>
+        <p>6 . Load a new document by window.location.assign("https://www.youtube.com/watch?v=FRg3vcyNpjk")
+               or window.location = "https://www.youtube.com/watch?v=FRg3vcyNpjk"
+        </p>
 
     </div>
 
@@ -45,6 +47,7 @@
     six.style.cursor = "pointer";
     six.addEventListener("click" , (event) => {
         window.location.assign("https://www.youtube.com/watch?v=FRg3vcyNpjk");
+        // window.location = "https://www.youtube.com/watch?v=FRg3vcyNpjk"
         console.log("location : ",location);
         console.log(window.location.href);
         console.log(location.hostname);
