@@ -13,9 +13,11 @@
         <p>3. Getting path and file name of current page by location.pathname</p>
         <p>4. Getting web protocol by window.location.protocol</p>
         <p>5. Getting port by window.location.port</p>
-        <p>6 . Load a new document by window.location.assign("https://www.youtube.com/watch?v=FRg3vcyNpjk")
-               or window.location = "https://www.youtube.com/watch?v=FRg3vcyNpjk"
+        <p>6. Load a new document by window.location.assign("https://www.youtube.com/watch?v=FRg3vcyNpjk")
+               or window.location = "https://www.youtube.com/watch?v=FRg3vcyNpjk". "?v=FRg3vcyNpjk" is a parameter
         </p>
+        <p>7. To search the parameter use window.location.search and you have to know also new URLSearchParams</p>
+        <p>let parameter = new URLSearchParams(window.location.search).get("v")</p>
 
     </div>
 
