@@ -15,8 +15,10 @@ let ConstructorFunction = function (namee,age,nested_object,array) {
 };
 
 // when we give "new" it means it is object but without giving "new" it represent window after printing "this" keyword
-const object1 = new ConstructorFunction("Taib",27,{nickName:"pothead",score:25},[10,20,30]); // it represent object
+const object1 = new ConstructorFunction("Taib",27,{nickName:"pothead",score:25},[10,20,30]); // it represent regular object with "this keyword - object rules"
 console.log("it represent object : ",object1);
 
-const object2 = ConstructorFunction("Taib",27,{nickName:"pothead",score:25},[10,20,30]); // it represent window
+const object2 = ConstructorFunction("Taib",27,{nickName:"pothead",score:25},[10,20,30]); // it represent window object with "this keyword - global context rules" 
 console.log("it represent window : ",object2);
+
+// to see more details go to this keyword/ directory
