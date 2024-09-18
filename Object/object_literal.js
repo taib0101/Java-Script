@@ -10,6 +10,13 @@ let object = {
     functionn : () => {
         console.log("object called here");
         return "object returned";
+    },
+
+    thisFunction : function() {
+        console.log(this);
+        console.log(this.namee);
     }
 };
 console.log(object.functionn());
+console.log();
+console.log(object.thisFunction());

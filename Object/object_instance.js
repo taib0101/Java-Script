@@ -11,5 +11,11 @@ object.functionn = () => {
     console.log("object called here");
     return "object returned";
 };
+object.thisFunction = function() {
+    console.log(this);
+    console.log(this.namee);
+};
 
 console.log(object.functionn());
+console.log();
+console.log(object.thisFunction());
