@@ -1,0 +1,11 @@
+// Prototype is a object of JavaScript Object or Function
+// Prototype make Prototype chain of object
+// JavaScript is a Prototype based language, when OOP was not used in JavaScript
+// If there have no property(member variable) or method(member function) in object , JavaScript engine will search to prototype Object 
+// Prototype work with every function, but better practice is using prototype on Constructor Function
+// In every Custom Function and Buildin Constructor Function like (Array,Object) has buildin prototype
+// Prototype helps to inherit the parents property
+// Prototype reduce memory complexity
+// prototype works BackEnd of OOP
+
+// in vanilla js there have no oop , it follow still ES5

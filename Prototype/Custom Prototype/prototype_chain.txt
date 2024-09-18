@@ -1,0 +1,11 @@
+
+// Object (O) is master object. every object create from master object
+// goto browser console and see it
+
+
+            Object (O)-----------------------------------------------------------\
+            ↓                                                                     \
+            Function (F)------------------------------------------------------------------ prototype
+            ↓                                                                     /         /       \
+            global or object or construcotr function (f)-------------------------/      property    method
+
