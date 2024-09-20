@@ -46,7 +46,7 @@ console.log(objectChild);
                                 // -------------------------
                                 // |   function play()     |
                                 // |   function eat()      |
-                                // |   function sleep()    |------
+                                // |   function sleep()    |<-----
                                 // -------------------------     |
                                 //                               |
                                 //                               |
@@ -57,7 +57,7 @@ console.log(objectChild);
                                 // -------------------------     |
                                 // |    firstName          |     |
                                 // |    lastName           |     |
-                                // |   __proto__  <--------------|
+                                // |   __proto__  ---------------|
                                 // -------------------------
 // using method Type of code is not better practice for modern JavaScript 
 // There have cool method Custom Prototype, it create after creating Constructor Function
