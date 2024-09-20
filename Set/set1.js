@@ -5,6 +5,9 @@ set.add(10);
 set.add([]);
 console.table(set);
 
+// has value
+console.log(set.has(10));
+
 //size of set
 let sizee = set.size;
 console.log("Size = ",set.size);
