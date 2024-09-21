@@ -23,6 +23,12 @@ ConstructorFunction.prototype = {
     }
 }
 
+ConstructorFunction.prototype.function = function() {
+    console.log("This function is from Constructor Function");
+};
+
+ConstructorFunction.prototype.age = 50;
+
 let object1 = new ConstructorFunction("Murtaza",30);
 let object2 = new ConstructorFunction("Nurul",30);
 
@@ -31,17 +37,14 @@ console.log(object1);
 console.log(object2);
 
 console.log();
-console.log("Showing Prototype object by object.__proto__ and you can't use this object.prototype for object");
-console.log(object1.__proto__);
-console.log(object2.__proto__);
-
-console.log();
-console.log("Constructor Prototype : ",ConstructorFunction.prototype);
-
-console.log();
-console.log(ConstructorFunction.prototype === object1.__proto__);
-
-console.log();
 console.log(object1.eat());
 console.log(object2.sleep());
 console.log(object1.smoke());
+
+console.log();
+console.log(object1.function());
+console.log(object2.function());
+
+console.log();
+console.log(object1.age);
+console.log(object2.age);
