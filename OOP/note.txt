@@ -1,0 +1,26 @@
+Object Oriented Programming has 4 pillar
+1.Abstraction
+2.Encapsulation
+3.Inheritance
+4.Polymorphism
+-----------------------------------------------
+
+*Abstraction : Abstraction simplify the code.when child inherite from parent.
+instance or object can create by child class.it simplify the code because we
+don't create instance by parent.
+
+*Encapsulation : Encapsulation concept refer that making the property and
+method private.we can set private property by "set" and get those by "get".
+It called getter, setter also.
+
+*Inheritance : Inheritance refer child to inherite from parent
+
+*Polymorphism : Polymorphism refer inherite , override, overloading
+----------------------------------------------------------------------------
+See ALso :
+prototype chain, proto, constructor, getter,setter, over ride, over loading
+re declaring, static method, this
+
+-----------------------------------------------------------------------
+property as member variable
+method as member function
