@@ -30,7 +30,7 @@ functionn2( (value) => {
 	return 1;
 });
 
-// functionn2() this default call will not work because
+// functionn2() this default call or overloading will not work because
 // in anonymous function i set parameter for getting value from callback 
 // argument
 

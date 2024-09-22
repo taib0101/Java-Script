@@ -30,8 +30,6 @@ class Cricketer extends Person{
     // child
     constructor(name,age,type,country) {
         super(name,age); // Person.call(this) play role at backend, for super(name,age).name,age inherited from Person class
-        this.name = name;
-        this.age = age;
         this.type = type;
         this.country = country;
     }

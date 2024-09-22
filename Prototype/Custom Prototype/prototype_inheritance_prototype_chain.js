@@ -23,8 +23,9 @@ Cricketer.prototype.play = function() {
 };
 
 // now Cricket prototype will inherit Person prototype
+// Object.create(Person.prototype) means Cricket.prototype.__proto__ === Person.prototype
 Cricketer.prototype = Object.create(Person.prototype);
-Cricketer.prototype.constructor = Cricketer; // it will for over right , because in Cricketer Constructor function was written call,if you don't use inherit will not work
+Cricketer.prototype.constructor = Cricketer; // it will for override , because in Cricketer Constructor function was written call,if you don't use inherit will not work
 
 // creating object by child
 let tamim = new Cricketer("Tamim",40,"Batsman","Bangudesh");

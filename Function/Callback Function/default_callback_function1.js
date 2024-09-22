@@ -17,4 +17,4 @@ let display = (sum) => {
 
 //passing function as argument
 calculator(2,3,display);
-calculator(3,5);
+calculator(3,5); // overloading done here
