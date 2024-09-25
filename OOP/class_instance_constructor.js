@@ -1,3 +1,4 @@
+// you have to write property inside method, if assign any kind property or mehod with this outside method it will show error
 class Person {
     constructor(name,age) {
         this.name = name;
