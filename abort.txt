@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch Abort with Async Await</h1>
+    <button>fetch abort</button>
+</body>
+<script>
+    const button = document.querySelector("button");
+    const h1 = document.querySelector("h1");
+
+    let controller = new AbortController();
+    let signal = controller.signal;
+
+    async function main() {
+        try {
+            let url = "https://randomuser.me/api";
+            let object = {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer your-token",
+                    "X-Custom-Header": "your-custom-value"
+                },
+                signal: signal
+            }
+
+            let response = await fetch(url, object);
+            let data = await response.json();
+            // let data = await response.text(); // **
+
+            h1.innerText = JSON.stringify(data);
+            // h1.innerText = data // **
+        } catch (error) {
+            if (error.name === "AbortError")
+                console.log(error.name);
+            else
+                console.log("another error");
+        }
+    }
+
+
+    button.addEventListener("click", () => {
+        main();
+        setTimeout(() => {
+            controller.abort();
+            console.log("abort call from here");
+        }, 10);
+    });
+</script>
+
+</html>
