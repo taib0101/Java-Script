@@ -6,8 +6,18 @@ let promise = () => {
     });
 }
 
+// old ecma script
+// async function main () {
+//     try {
+//         let variable = await promise();
+//         console.log(variable);
+//     } catch(error) {
+//         console.log(error);
+//     }
 
-async function main () {
+// }
+
+const main = async () => {
     try {
         let variable = await promise();
         console.log(variable);
@@ -15,7 +25,7 @@ async function main () {
         console.log(error);
     }
 
-    // if you want to see more details got to NodeJS/async await
 }
 
 main();
+// if you want to see more details got to NodeJS/async await
