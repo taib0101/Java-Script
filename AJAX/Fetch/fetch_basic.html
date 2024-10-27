@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch Basic</h1>
+    <button>Fetch Basic</button>
+</body>
+<script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+        const h1 = document.querySelector("h1");
+        h1.innerText = "fetch(url,object) \n";
+        h1.innerText += "fetch(\"https://randomuser.com/api\",{method: \"GET\" , headers : {Content-Type : \"application/json\"}}) \n";
+
+        // fetch doesn't support event listener
+        fetch("http://164.68.107.70:6060/api/v1/ReadProduct", { method: "GET" })
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+
+
+        // or fetch(url,object);
+        let url = "http://164.68.107.70:6060/api/v1/ReadProduct";
+
+        let object = {
+            method: "GET",
+            headers: {
+                // Add headers only if required by the server (e.g., for authentication or other custom purposes).
+                "Authorization": "Bearer your-token",  // Custom headers, if needed
+                "X-Custom-Header": "your-custom-value"
+            }
+            // we do not set body for sending data during get request
+        };
+        fetch(url, object)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+
+
+        // if you want to see the response of Fetch request , you have to apply "promise .then" or "async and await"
+        // better practice is using async await
+    });
+</script>
+
+</html>

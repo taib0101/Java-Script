@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX is developer dream</h1>
+    <button id="button">send http request</button>
+    
+</body>
+<script>
+    const button = document.querySelector("#button");
+
+    // click event
+    button.addEventListener("click" , () => {
+        let request = new XMLHttpRequest();
+
+        // try this for error event , after disconnect the internet
+        request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct",true);
+        request.send();
+        
+        let content;
+        // load event
+        request.addEventListener("load" , () => {
+            content = document.querySelector("h1");    
+            content.innerText = request.responseText;
+            console.log(request.responseText);
+        });
+        
+        // error event
+        // this error event will work, when internet is disconnected
+        request.addEventListener("error",() => {
+            console.log("load error because , internet is off");
+        });
+
+    });
+</script>
+</html>

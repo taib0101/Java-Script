@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch with Async Await</h1>
+    <button>fetch</button>
+</body>
+
+<script>
+    const button = document.querySelector("button");
+    const h1 = document.querySelector("h1");
+
+
+    // using async await is better then promise
+    async function main() {
+        let url = "http://164.68.107.70:6060/api/v1/ReadProduct";
+        let object = {
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer your-token",
+                "X-Custom-Header": "your-custom-value"
+            }
+            // we do not set body for sending data during get request
+        };
+
+        try {
+            let response = await fetch(url, object);
+
+            let data = await response.json();
+            // let data = await response.text(); // **
+
+            let arr = data.data;
+
+            // delete using get request , we can do it with delete request
+            for (let i = 0; i < arr.length; ++i) {
+                if (arr[i]._id === "66e42c29953a8bfe7cac9182") { 
+                    url = "http://164.68.107.70:6060/api/v1/DeleteProduct/" + arr[i]._id;
+
+                    let response1 = await fetch(url,object);
+                    let data1 = await response1.json();
+                    
+                    h1.innerText = JSON.stringify(data1);
+                    break;
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    button.addEventListener("click", () => {
+        main();
+    });
+</script>
+
+</html>

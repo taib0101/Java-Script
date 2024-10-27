@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Kasper",
+                "last": "Leppanen"
+            },
+            "location": {
+                "street": {
+                    "number": 2796,
+                    "name": "Bulevardi"
+                },
+                "city": "Miehikkälä",
+                "state": "Northern Savonia",
+                "country": "Finland",
+                "postcode": 98976,
+                "coordinates": {
+                    "latitude": "-29.7271",
+                    "longitude": "-73.9541"
+                },
+                "timezone": {
+                    "offset": "-6:00",
+                    "description": "Central Time (US & Canada), Mexico City"
+                }
+            },
+            "email": "kasper.leppanen@example.com",
+            "login": {
+                "uuid": "6834087f-dee1-482d-a427-3d9a7a775073",
+                "username": "blackladybug310",
+                "password": "delilah",
+                "salt": "254gIk2Q",
+                "md5": "3b9090650dd3fa1c7d8c1c8ca78979b2",
+                "sha1": "0f904c0673e9602937f41d304bc14655890e8e0a",
+                "sha256": "2768acd0a34d345efcb58766dc3f38af8a83f311a88a16696943b4f648134f2c"
+            },
+            "dob": {
+                "date": "1990-12-31T15:48:33.815Z",
+                "age": 33
+            },
+            "registered": {
+                "date": "2014-09-13T15:45:54.760Z",
+                "age": 9
+            },
+            "phone": "05-644-304",
+            "cell": "042-688-48-43",
+            "id": {
+                "name": "HETU",
+                "value": "NaNNA989undefined"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/68.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/68.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/68.jpg"
+            },
+            "nat": "FI"
+        }
+    ],
+    "info": {
+        "seed": "46eff0b69c6ae542",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}

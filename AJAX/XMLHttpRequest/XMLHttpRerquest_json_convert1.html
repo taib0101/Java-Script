@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="one">XMLHttpRequest convert json, string to object , JSON.parse()</h1>
+    <button id="button1">string to object</button>
+
+    <h1 id="two">XMLHttpRequest convert json, object to string, JSON.stringify()</h1>
+    <button id="button2">object to string</button>
+</body>
+
+<script>
+    const button1 = document.querySelector("#button1");
+    const button2 = document.querySelector("#button2");
+    
+    let stringToObject;
+    const one = document.querySelector("#one");
+    // string to object
+    button1.addEventListener("click",() => {
+        let request = new XMLHttpRequest();
+        request.open("GET","https://randomuser.me/api",true);
+        request.send();
+
+        request.addEventListener("load",() => {
+            // string to object
+            stringToObject = JSON.parse(request.responseText);
+            console.log(stringToObject);
+            one.innerText = stringToObject + "\n";
+            one.innerHTML += `${stringToObject.results[0].gender}`;
+        });
+    });
+
+     const two = document.querySelector("#two");
+    // object to string
+    button2.addEventListener("click",() => {
+        // object to string
+        let objectToString = JSON.stringify(stringToObject);
+        two.innerText = objectToString;
+        console.log(objectToString);
+    });
+
+</script>
+</html>

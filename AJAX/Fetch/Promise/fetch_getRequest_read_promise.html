@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch Get Request Promise</h1>
+    <button>get request</button>
+</body>
+<script>
+
+    const button = document.querySelector("button");
+    let url = `http://164.68.107.70:6060/api/v1/ReadProduct/`;
+    let object = {
+        method: "GET",
+        headers: {  
+            "Authorization": "Bearer your-token",
+            "X-Custom-Header": "your-custom-value"
+        }
+        // we do not set body for sending data during get request
+    };
+
+
+    const h1 = document.querySelector("h1");
+    button.addEventListener("click", () => {
+        // response.json() as object
+        // JSON.stringify convert object to string
+        fetch(url, object)
+            .then((response) => {
+                console.log("status : ", response.status);
+                console.log("state : ", response.ok);
+                console.log("response header : ", response.headers);
+                console.log("response body : ", response.body);// use "response.bodyUsed" is a boolean property that response body has already been consumed or not.
+                console.log("response type : ", response.type); // it returns basic,cors,opaque,error
+
+                // we can't define response.json() for twice
+                // like console.log(response.json()) and return response.json()
+                // response.text() both
+                return response.json(); // 1**
+                // return response.text(); // 2**
+            })
+            .then((result) => { // it handles the json data
+                h1.innerText = JSON.stringify(result); // 1**
+                // h1.innerText = result; // 2**
+            })
+            .catch(error => console.log(error));
+    });
+</script>
+
+</html>

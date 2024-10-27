@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX is developer dream</h1>
+    <button id="button">send http request</button>
+    
+</body>
+<script>
+    // AJAX helps to prevent whole page load and helps to load specific content 
+    // XML made by microsoft , it is used for handling request for data transferring
+    // but now popular is JSON
+
+    const button = document.querySelector("#button");
+    button.addEventListener("click" , (event) => {
+        // 1. creating XMLHttpRequest Object
+        let request = new XMLHttpRequest();
+
+        // prepare request methods : GET, POST, PUT , DELETE, PATCH and etc
+        // request.open(METHOD,URL)
+        // 2.open the XMLHttpRequest Object
+        request.open("GET" , "http://164.68.107.70:6060/api/v1/ReadProduct");
+        // request.open("GET" , "data/data.txt");
+        
+        // 3.send request to the server
+        request.send();
+
+        // after sending request it takes time and listen the load event
+        // 4. define a load event listener
+        request.addEventListener("load" , (request_event) => {
+            let content = document.querySelector("h1");
+            
+            content.innerText = request.responseText; // also try responseType, responseURL, responseXML
+            console.log(request.responseText);
+        });
+
+    });
+</script>
+</html>

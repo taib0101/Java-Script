@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Create</h1>
+    <button>post request</button>
+</body>
+
+<script>
+    const button = document.querySelector("button");
+
+    const h1 = document.querySelector("h1");
+    let method = "POST";
+    let url = "http://164.68.107.70:6060/api/v1/CreateProduct/";
+    let data = {
+        ProductName: "productName.value",
+        ProductCode: "productCode.value",
+        Img: "productImage.value",
+        UnitPrice: "unitPrice.value",
+        Qty: "productQty.value",
+        TotalPrice: "productTotal.value"
+    };
+    
+    button.addEventListener("click", () => {
+        let request = new XMLHttpRequest();
+        request.open(method, url, true);
+
+        request.setRequestHeader("Content-Type","application/json");
+        request.setRequestHeader("Action","application/json");
+
+        request.send(JSON.stringify(data));
+
+        request.addEventListener("load", () => {
+            h1.innerText = request.responseText;
+        })
+
+        request.addEventListener("error", () => {
+            console.log("error");
+        });
+    });
+</script>
+
+</html>

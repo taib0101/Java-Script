@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>XMLHttpRequest Object Property</h1>
+    <button id="button">XMLHttpRequest</button>
+</body>
+<script>
+    let button = document.querySelector("#button");
+    button.addEventListener("click", () => {
+        let request = new XMLHttpRequest();
+
+        request.open("GET", "http://164.68.107.70:6060/api/v1/ReadProduct");
+
+        request.send();
+
+        let content = document.querySelector("h1");
+        request.addEventListener("load", () => {
+
+            // readyState
+            // 0: request not initialized
+            // 1: server connection established
+            // 2: request received
+            // 3: processing request
+            // 4: request finished and response is ready
+            content.innerText = "";
+            content.innerText += request.readyState;
+
+            // status   statusText
+            // 200:     "OK"
+            // 403:     "Forbidden"
+            // 404:     "Not Found"
+            content.innerText += " " + request.status;
+
+            content.innerText += " " + request.statusText;
+
+            content.innerText += " " + request.responseText;
+        });
+    });
+</script>
+
+</html>

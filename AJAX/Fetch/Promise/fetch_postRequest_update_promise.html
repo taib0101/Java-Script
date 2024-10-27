@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch Put Request for update</h1>
+    <button>put request</button>
+</body>
+<script>
+    const button = document.querySelector("button");
+    let data = {
+        ProductName: "productName",
+        ProductCode: "productCode",
+        Img: "productImage",
+        UnitPrice: "unitPrice",
+        Qty: "productQty",
+        TotalPrice: "productTotal"
+    };
+
+    // yo can do it with PUT and POST request both
+    // if you want to update data , you can use POST request with unique id to update data
+    // url = https://web-url/home/destination/uniqueId;
+    let url = "http://164.68.107.70:6060/api/v1/UpdateProduct/66e4256e953a8bfe7cac904c";
+    let object_request = {
+        method : "POST",
+        headers : {
+            "Content-Type" : "application/json",
+            "Action" : "application/json"
+        },
+        body : JSON.stringify(data)
+    };
+    
+    const h1 = document.querySelector("h1");
+    button.addEventListener("click",() => {
+        fetch(url,object_request)
+            .then((response) => {
+                console.log("status : ",response.status);
+                console.log("state : ",response.ok);
+                console.log("response header : ",response.headers);
+                console.log("response body : ",response.body); // use "response.bodyUsed" is a boolean property that response body has already been consumed or not.
+                console.log("response type : ",response.type);
+
+                return response.json(); // 1**
+                // return response.text(); // 2**
+            })
+            .then(result => h1.innerText = JSON.stringify(result))
+            .catch((error) => console.log("error"))
+    });
+</script>
+
+</html>

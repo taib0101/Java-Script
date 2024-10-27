@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch with Async Await</h1>
+    <button>fetch</button>
+</body>
+
+<script>
+    const button = document.querySelector("button");
+    const h1 = document.querySelector("h1");
+
+
+    // using async await is better then promise
+    async function main() {
+        let url = "http://164.68.107.70:6060/api/v1/ReadProduct";
+        let object = {
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer your-token",
+                "X-Custom-Header": "your-custom-value"
+            }
+            // we do not set body for sending data during get request
+        };
+
+        try {
+            let response = await fetch(url, object);
+            console.log("status : ", response.status);
+            console.log("state : ", response.ok);
+            console.log("response header : ", response.headers);
+            console.log("response body : ", response.body);
+            console.log("response type : ", response.type);
+
+            let data = await response.json();
+            // let data = await response.text(); // **
+
+            h1.innerText = JSON.stringify(data);
+            // h1.innerText = data; // **
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    button.addEventListener("click", () => {
+        main();
+    });
+</script>
+
+</html>

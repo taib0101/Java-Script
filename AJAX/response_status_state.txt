@@ -1,0 +1,41 @@
+response status                           state
+------------------			----------------
+
+1xx -->> information                     0 -->> request not initialized
+2xx -->> success			 1 -->> server connection established
+3xx -->> redirection			 2 -->> request received
+4xx -->> client error			 3 -->> processing request
+5xx -->> server error			 4 -->> request finished and response is ready
+
+
+response type
+-----------------
+**Note: This is only for Fetch 
+**fetch(url,object_request).then(response => console.log(response.type))
+
+if (response.status > 200 && response.status < 300)
+	console.log('Response Type: basic');
+else if (response.status >= 400 && response.status < 600)
+	console.log('Response Type: error');
+else if (response.status === 0)
+	console.log('Response Type: opaque');
+else
+	console.log('Response Type: cors');
+
+response type in details
+--------------------------
+basic:
+Full Meaning: Full access to response data.
+Description: Same-origin requests, complete access to headers and body.
+
+cors:
+Full Meaning: Cross-Origin Resource Sharing enabled.
+Description: Cross-origin requests, partial access to headers and body.
+
+opaque:
+Full Meaning: Opaque response with restricted information.
+Description: Cross-origin request without CORS, no access to body or most headers.
+
+error:
+Full Meaning: Network error response.
+Description: Indicates a failed request due to network issues, no response body available.

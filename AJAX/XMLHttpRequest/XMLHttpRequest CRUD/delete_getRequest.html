@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Delete</h1>
+    <button>get request</button>
+</body>
+
+<script>
+    const button = document.querySelector("button");
+
+    const h1 = document.querySelector("h1");
+    let method = "GET";
+    let url = "http://164.68.107.70:6060/api/v1/ReadProduct/";
+    let arr = [];
+    button.addEventListener("click" , () => {
+        let request = new XMLHttpRequest();
+
+        request.open(method,url,true);
+        request.send();
+
+        request.addEventListener("load",() => {
+            h1.innerText = request.responseText;
+            arr = JSON.parse(request.responseText);
+            arr = arr.data;
+            console.log(arr);
+
+            for(let i = 0; i < arr.length; ++i) {
+                if(arr[i]._id === "66e41088953a8bfe7cac8eae") {
+                    method = "GET";
+                    url = "http://164.68.107.70:6060/api/v1/DeleteProduct/" + arr[i]._id;
+                    let request1 = new XMLHttpRequest();
+                    
+                    request1.open(method,url,true);
+                    request1.send();
+
+                    request1.addEventListener("load" , () => {
+                        console.log("deleted done");
+                    });
+                    break;
+                }
+            }
+        })
+
+        request.addEventListener("error" , () => {
+            console.log("error");
+        });
+    });
+</script>
+
+</html>

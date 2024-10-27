@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX is developer dream</h1>
+    <button id="button">send http request</button>
+    
+</body>
+<script>
+    const button = document.querySelector("#button");
+    button.addEventListener("click" , (event) => {
+        let request = new XMLHttpRequest();
+        // creating request in local directory
+        // request.open("GET" , "data.json");
+        request.open("GET","data.json",true);
+        request.send();
+
+        request.addEventListener("load" , (request_event) => {
+            let content = document.querySelector("h1"); 
+            content.innerText = request.responseText;
+            console.log(request.responseText);
+        });
+
+    });
+</script>
+</html>

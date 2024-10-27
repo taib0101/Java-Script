@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="one">XMLHttpRequest convert json, string to object</h1>
+    <button id="button1">string to object</button>
+
+    <h1 id="two">XMLHttpRequest convert json, object to string</h1>
+    <button id="button2">object to string</button>
+</body>
+
+<script>
+    const button1 = document.querySelector("#button1");
+    const button2 = document.querySelector("#button2");
+    
+    let stringToObject;
+    // request.responseType = "json"
+    const one = document.querySelector("#one");
+    button1.addEventListener("click",() => {
+        let request = new XMLHttpRequest();
+        request.open("GET","https://randomuser.me/api",true);
+        // using responseType it means, i will get the response,it will be JSON format
+        request.responseType = "json";
+        request.send();
+
+        request.addEventListener("load",() => {
+            // if you define responseType, you can't get responses as string anymore with responseText, 
+            // that's way i used only "response"
+            stringToObject = request.response;
+            console.log(stringToObject);
+            one.innerText = stringToObject;
+        });
+    });
+
+     const two = document.querySelector("#two");
+    // object to string
+    button2.addEventListener("click",() => {
+        let objectToString = JSON.stringify(stringToObject);
+
+        two.innerText = objectToString;
+        console.log(objectToString);
+    });
+
+</script>
+</html>

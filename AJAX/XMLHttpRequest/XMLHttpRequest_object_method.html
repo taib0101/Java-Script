@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>XMLHttpRequest Basic Object Method</h1>
+    <button id="button">XMLHttpRequest</button>
+</body>
+<script>
+    window.document.querySelector("#button")
+    .addEventListener("click" , (event) => {
+        let request = new XMLHttpRequest();
+        
+        // request.open(method,url,async,user,psw);
+        // method as GET, POST, PUT, DELETE
+        // url as http , path/file.txt and etc
+        // async as true(asynchronous), false(synchronous)
+        // user as optional user name
+        // psw as optional password
+        request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct");
+
+        // add a request header , it is done after request.open
+        // request.setRequestHeader("Content-Type","application/json");
+    
+        // request.send(string)
+        request.send();
+    
+        // if you want cancle or abort
+        // request.abort();
+    
+    	let content = document.querySelector("h1");
+        request.addEventListener("load" , () => {
+            // to see single response header
+            content.innerText = new String(request.getResponseHeader("last-modified"));
+
+
+            // to see all response header
+            content.innerText = new String(request.getAllResponseHeaders());
+
+            // go to browser inspect > network> click the button and click last request and header
+            // and goto header option see the request and response header
+        });
+    });
+</script>
+
+</html>

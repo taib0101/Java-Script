@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch Get Request for Delete Item</h1>
+    <button>get request</button>
+</body>
+<script>
+    // to delete specific things first find that id with GET request
+    // then delete it with DELETE request
+
+    const button = document.querySelector("button");
+    let url = "http://164.68.107.70:6060/api/v1/ReadProduct";
+    let object = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Action": "application/json"
+        }
+    };
+
+
+    // console.log("status : ",response.status);
+    // console.log("state : ",response.ok);
+    // console.log("response header : ",response.headers);
+    // console.log("response body : ",response.body);
+    // console.log("response type : ",response.type);
+
+    const h1 = document.querySelector("h1");
+    let arr = [];
+
+
+    button.addEventListener("click", () => {
+        fetch(url, object)
+            .then(response => response.json())
+            .then((data) => {
+                arr = data.data;
+                console.log(arr);
+                h1.innerText = JSON.stringify(data);
+                for (let i = 0; i < arr.length; ++i) {
+                    if (arr[i]._id === "66e4256e953a8bfe7cac904c") return arr[i]._id;
+                }
+                // arr.forEach(x => {return x}) or arr.map(x => {return x}) doesn't work for return a value
+            })
+            .then(result => {
+                console.log("found");
+                // after found that id , now it
+                // we found this using get request and unique id
+                // if we want to delete it we have to use DELETE request 
+                // but my instructor rabbil vai deleted it using get request
+
+                url = "http://164.68.107.70:6060/api/v1/DeleteProduct/" + result;
+                console.log(url);
+
+                object = {
+                    method: "GET",
+                    headers: {
+                        "Authorization": "Bearer your-token",
+                        "X-Custom-Header": "your-custom-value"
+                    }
+                };
+
+                // now delete item, by calling fetch
+                fetch(url, object)
+                    .then(response => {
+                        console.log(response);
+                        return response.json();
+                    })
+                    .then(result1 => h1.innerText = JSON.stringify(result1))
+                    .catch(error => console.log(error));
+            })
+            .catch(error => console.log(error));
+    });
+</script>
+
+</html>

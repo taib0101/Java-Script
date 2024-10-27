@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="one">Get Request</h1>
+    <button id="get"> get http request</button>
+    
+    <h1 id="two">Post Request</h1>
+    <button id="post">post http request</button>
+</body>
+<script>
+
+    // button1
+    const button1 = document.querySelector("#get");
+    button1.addEventListener("click",() => {
+        let request = new XMLHttpRequest();
+        request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct",true);
+        request.send();
+
+	let one = document.querySelector("#one");
+        request.addEventListener("load" , () => {
+            one.innerText = request.responseText;
+        });
+    });
+
+    // button2
+    const button2 = document.querySelector("#post");
+
+    // which is server the information , full fill the information, if you don't it will not post 
+    let data = {
+            ProductName: "I",
+            ProductCode: "am",
+            Img: "a",
+            UnitPrice: "man",
+            Qty: "is",
+            TotalPrice: "mortal"
+        }
+
+    button2.addEventListener("click",() => {
+        let request = new XMLHttpRequest();
+        request.open("POST","http://164.68.107.70:6060/api/v1/CreateProduct",true);
+
+        // if you don't set headers data will not post to the server
+        request.setRequestHeader("Content-Type","application/json");
+        request.setRequestHeader("Action","application/json");
+
+        request.send(JSON.stringify(data));
+
+        // When using XMLHttpRequest with request.open("POST", "data.txt"), the browser treats it as 
+        // a file retrieval (like a GET request), 
+        // because local files cannot be modified directly via HTTP requests
+        
+        // **To modify local files via HTTP, you need to set up a local server (e.g., using Node.js) to 
+        // handle HTTP requests and manage file operations.
+        let two = document.querySelector("#two");
+        request.addEventListener("load",() => {
+            two.innerText = request.responseText;
+        });
+    });
+</script>
+</html>

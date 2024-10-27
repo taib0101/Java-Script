@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>XMLHttpRequest open with aynschronous , synchronous or with unique id </h1>
+    <button id="button">XMLHttpRequest</button>
+</body>
+
+<script>
+    let button = document.querySelector("#button");
+    let content = document.querySelector("h1");
+
+    // asynchronous
+    // button.addEventListener("click" , () => {
+    //     let request = new XMLHttpRequest();
+    //     request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct",true);
+    //     request.send();
+        
+    //     request.addEventListener("load",() => {
+    //         console.log("request loaded 01");
+    //         content.innerText = request.responseText;
+    //     });
+    //     console.log("asynchronous");
+    // });
+
+    // synchronous
+    // button.addEventListener("click" , () => {
+    //     let request = new XMLHttpRequest();
+    //     request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct",false);
+    //     request.send();
+        
+    //     request.addEventListener("load",() => {
+    //         console.log("request loaded 02");
+    //     });
+    //     console.log("synchronous");
+    // });
+
+    // after giving request to server ,it remember the cached ,
+    // but random request don't remind the cache
+    button.addEventListener("click" , () => {
+        let request = new XMLHttpRequest();
+        request.open("GET","http://164.68.107.70:6060/api/v1/ReadProduct?t=" + Math.random(),true);
+        request.send();
+        
+        request.addEventListener("load",() => {
+            console.log("different cached");
+            content.innerText = request.responseText;
+        });
+    });
+</script>
+</html>
