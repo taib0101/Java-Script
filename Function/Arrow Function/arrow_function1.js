@@ -1,3 +1,5 @@
+// arrow function was create for controlling "this keyword"
+
 //with second bracket
 let arrow_function = () => {
     return "hey bro";
