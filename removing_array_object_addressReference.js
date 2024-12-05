@@ -1,5 +1,7 @@
 let arr1 = [1, 2, 3];
 let arr2 = arr1.slice(); // removing reference
+// or
+// arr2 = [...arr1];
 arr2.push(5, 6);
 console.log("Array1 :", arr1);
 console.log("Array2 :", arr2);
