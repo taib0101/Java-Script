@@ -1,4 +1,5 @@
 // arrow function was create for controlling "this keyword"
+// go to "this keyword" directory for better understand
 
 //with second bracket
 let arrow_function = () => {
